@@ -8,7 +8,7 @@ public class ExperienceCalculator {
         int questXP = 175;
         int enemyXP = 75;
 
-        System.out.println("Starting XP: +" + playerXP);
+        System.out.println("Starting XP: " + playerXP);
         System.out.println("Quest Reward: +" + questXP + " XP");
         System.out.println("Enemy Reward: +" + enemyXP + " XP");
 
