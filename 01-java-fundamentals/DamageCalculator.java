@@ -19,7 +19,7 @@ public class DamageCalculator {
         playerHealth += healingPotion;
 
         System.out.println("Player drinks potion.");
-        System.out.println("Recovered HP: " + healingPotion + "HP");
+        System.out.println("Recovered HP: " + healingPotion + " HP");
         System.out.println("Current HP: " + playerHealth);
 
 
