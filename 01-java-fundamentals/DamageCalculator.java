@@ -11,9 +11,17 @@ public class DamageCalculator {
         playerHealth -= damageTaken;
 
         System.out.println("The enemy attacks!");
+        System.out.println("");
         System.out.println("Damage taken: " + damageTaken);
         System.out.println("Remaining HP: " + playerHealth);
 
-        
+        int healingPotion = 15;
+        playerHealth += healingPotion;
+
+        System.out.println("Player drinks potion.");
+        System.out.println("Recovered HP: " + healingPotion + "HP");
+        System.out.println("Current HP: " + playerHealth);
+
+
     }
 }
