@@ -15,6 +15,8 @@ public class DamageCalculator {
         System.out.println("Damage taken: " + damageTaken);
         System.out.println("Remaining HP: " + playerHealth);
 
+        // EXERCISE 03 - HEALING POTION
+
         int healingPotion = 15;
         playerHealth += healingPotion;
 
