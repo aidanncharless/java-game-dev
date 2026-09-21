@@ -86,7 +86,7 @@ public class RPGGame {
         System.out.println("Defense: " + defense);
         System.out.println("Gold: " + gold);
 
-        System.out.println("Critical Chance: " + criticalChance);
+        System.out.println("Critical Chance: " + criticalMultiplier);
         System.out.println("Critical Damage: " + criticalDamage);
         System.out.println("Movement Speed: " + movementSpeed);
 
