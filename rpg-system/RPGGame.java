@@ -48,17 +48,19 @@ public class RPGGame {
         manaCost = 12;
         mana = maxMana - manaCost;
 
-        System.out.println("Player uses " + mana + " mana.");
+        System.out.println("Player uses " + manaCost + " mana.");
         System.out.println("↓");
         System.out.println("Enemy is defeated.");
         System.out.println("↓");
 
         int rewardXP = 65;
+        xp += rewardXP;
 
         System.out.println("Player receives " + rewardXP + " XP");
         System.out.println("↓");
 
         int rewardGold = 30;
+        gold += rewardGold;
 
         System.out.println("Player receives " + rewardGold + " gold.");
         System.out.println("↓");
@@ -86,7 +88,7 @@ public class RPGGame {
         System.out.println("Defense: " + defense);
         System.out.println("Gold: " + gold);
 
-        System.out.println("Critical Chance: " + criticalMultiplier);
+        System.out.println("Critical Multiplier: " + criticalMultiplier);
         System.out.println("Critical Damage: " + criticalDamage);
         System.out.println("Movement Speed: " + movementSpeed);
 
