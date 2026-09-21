@@ -11,15 +11,19 @@ public class RPGGame {
         int maxHealth;
 
         int mana;
+        int manaCost;
         int maxMana;
 
-        int attack = 75;
+        int attack = 35;
         int defense = 50;
 
         int gold;
 
-        double criticalChance = 1.5;
         double movementSpeed = 5.5;
+
+        double criticalMultiplier = 1.5;
+        double criticalDamage = attack * criticalMultiplier;
+
 
         boolean hasKey = true;
         boolean isAlive = true;
@@ -41,22 +45,22 @@ public class RPGGame {
         System.out.println("Player attacks enemy.");
         System.out.println("↓");
 
-        mana = 12;
-        int remainingMana = maxMana - mana;
+        manaCost = 12;
+        mana = maxMana - manaCost;
 
         System.out.println("Player uses " + mana + " mana.");
         System.out.println("↓");
         System.out.println("Enemy is defeated.");
         System.out.println("↓");
 
-        xp = 65;
+        int rewardXP = 65;
 
-        System.out.println("Player receives " + xp + " XP");
+        System.out.println("Player receives " + rewardXP + " XP");
         System.out.println("↓");
 
-        gold = 30;
+        int rewardGold = 30;
 
-        System.out.println("Player receives " + gold + " gold.");
+        System.out.println("Player receives " + rewardGold + " gold.");
         System.out.println("↓");
         
         int healingPotion = 15;
@@ -76,13 +80,14 @@ public class RPGGame {
         System.out.println("XP: " + xp);
 
         System.out.println("HP: " + health + "/" + maxHealth);
-        System.out.println("Mana: " + remainingMana + "/" + maxMana);
+        System.out.println("Mana: " + mana + "/" + maxMana);
 
         System.out.println("Attack: " + attack);
         System.out.println("Defense: " + defense);
         System.out.println("Gold: " + gold);
 
         System.out.println("Critical Chance: " + criticalChance);
+        System.out.println("Critical Damage: " + criticalDamage);
         System.out.println("Movement Speed: " + movementSpeed);
 
         System.out.println("Has Key: " + hasKey);
