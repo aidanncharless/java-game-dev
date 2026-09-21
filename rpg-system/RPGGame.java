@@ -1,13 +1,11 @@
-package rpg-system;
-
 public class RPGGame {
     public static void main(String[] args) {
 
         String playerName;
         String characterClass;
 
-        String level;
-        String xp;
+        int level;
+        int xp;
         
         int health;
         int maxHealth;
