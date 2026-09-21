@@ -30,7 +30,7 @@ public class RPGGame {
         gold = 100;
         xp = 0;
 
-        System.out.println("Player has: \n" + health + "HP\n" + mana + "Mana\n" + gold + "Gold\n" + xp + "XP");
+        System.out.println("Player has: \n" + health + " HP\n" + mana + " Mana\n" + gold + " Gold\n" + xp + " XP");
 
     }
     
