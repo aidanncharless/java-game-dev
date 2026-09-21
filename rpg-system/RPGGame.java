@@ -33,15 +33,16 @@ public class RPGGame {
         System.out.println("Player has: \n" + maxHealth + " HP\n" + maxMana + " Mana\n" + gold + " Gold\n" + xp + " XP");
 
         int enemyDmg = 24;
-        maxHealth -= enemyDmg;
+        health -= enemyDmg;
 
         System.out.println("↓");
-        System.out.println("Enemy attacks player for " + enemyDmg + " damage");
+        System.out.println("Enemy attacks player for " + enemyDmg + " damage.");
         System.out.println("↓");
         System.out.println("Player attacks enemy.");
         System.out.println("↓");
 
         mana = 12;
+        int remainingMana = maxMana - mana;
 
         System.out.println("Player uses " + mana + " mana.");
         System.out.println("↓");
@@ -75,7 +76,7 @@ public class RPGGame {
         System.out.println("XP: " + xp);
 
         System.out.println("HP: " + health + "/" + maxHealth);
-        System.out.println("Mana: " + mana + "/" + maxMana);
+        System.out.println("Mana: " + remainingMana + "/" + maxMana);
 
         System.out.println("Attack: " + attack);
         System.out.println("Defense: " + defense);
