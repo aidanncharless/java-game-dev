@@ -1,8 +1,8 @@
 public class RPGGame {
     public static void main(String[] args) {
 
-        String playerName = Kaia;
-        String characterClass = Mage;
+        String playerName = "Kaia";
+        String characterClass = "Mage";
 
         int level = 5;
         int xp;
