@@ -1,18 +1,18 @@
 public class HealthChecker {
     public static void main(String[] args) {
 
-        int health = 70;
-
-        if (health > 75) {
+        int health = 10;
+        if (health >= 75) {
             System.out.println("Healthy");
-        } else if (health > 50) {
+        } else if (health >= 50) {
             System.out.println("Injured");
-        } else if (health > 35) {
+        } else if (health >= 25) {
             System.out.println("Low Health");
-        } else if (health > 20) {
+        } else if (health >= 1) {
             System.out.println("Critical");
-        } else if (health <= 0) {
+        } else {
             System.out.println("Dead");
         }
+        
     }
 }
