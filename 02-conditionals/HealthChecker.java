@@ -1,7 +1,7 @@
 public class HealthChecker {
     public static void main(String[] args) {
 
-        int health = 10;
+        int health = 40;
         if (health >= 75) {
             System.out.println("Healthy");
         } else if (health >= 50) {
@@ -13,6 +13,6 @@ public class HealthChecker {
         } else {
             System.out.println("Dead");
         }
-        
+
     }
 }
