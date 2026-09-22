@@ -3,7 +3,7 @@ public class DungeonDoor {
     public static void main(String[] args) {
 
         boolean hasKey = true;
-        boolean knowsUnlockSpell = false;
+        boolean knowsUnlockSpell = true;
 
         if (hasKey || knowsUnlockSpell) {
             System.out.println("The door has opened.");
