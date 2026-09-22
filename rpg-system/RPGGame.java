@@ -91,8 +91,6 @@ public class RPGGame {
         }
 
 
-        System.out.println("Player drinks potion and restores " + healingPotion + " HP");
-
         System.out.println("========================");
         System.out.println("        CHARACTER       ");
         System.out.println("========================");
