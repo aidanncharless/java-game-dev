@@ -9,28 +9,12 @@ public class ComparisonPractice {
         int gold = 150;
         int level = 5;
 
-        if (health > 50) {
-            System.out.println("true");
-        }
+        System.out.println("Health > 50: " + (health > 50));
+        System.out.println("Mana == 30: " + (mana == 30));
+        System.out.println("Gold < 100: " + (gold < 100));
+        System.out.println("Level >= 5: " + (level >= 5));
+        System.out.println("Health == 100: " + (health == 100));
+        System.out.println("Mana != 0: " + (mana != 0));
 
-        if (mana == 30) {
-            System.out.println("true");
-        }
-
-        if (gold < 100) {
-            System.out.println("false");
-        }
-
-        if (level >= 5) {
-            System.out.println("true");
-        }
-
-        if (health == 100) {
-            System.out.println("false");
-        }
-
-        if (mana != 0) {
-            System.out.println("true");
-        }
     }
 }
