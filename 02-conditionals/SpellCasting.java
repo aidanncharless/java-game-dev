@@ -1,7 +1,7 @@
 public class SpellCasting {
     public static void main(String[] args) {
 
-        int mana = 10;
+        int mana = 50;
         int spellCost = 25;
         boolean hasStaff = true;
 
