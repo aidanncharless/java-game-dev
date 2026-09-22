@@ -3,13 +3,13 @@ public class HealthChecker {
 
         int health = 40;
 
-        if (health <= 100) {
+        if (health > 75) {
             System.out.println("Healthy");
-        } else if (health <= 75) {
+        } else if (health > 50) {
             System.out.println("Injured");
-        } else if (health <= 40) {
+        } else if (health > 35) {
             System.out.println("Low Health");
-        } else if (health <= 25) {
+        } else if (health > 20) {
             System.out.println("Critical");
         } else if (health <= 0) {
             System.out.println("Dead");
