@@ -10,7 +10,7 @@ public class RPGGame {
         int health = 100;
         int maxHealth;
 
-        int mana;
+        int mana = 50;
         int manaCost;
         int maxMana;
 
