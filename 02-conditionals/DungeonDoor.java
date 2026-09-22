@@ -2,7 +2,7 @@ public class DungeonDoor {
     
     public static void main(String[] args) {
 
-        boolean hasKey = false;
+        boolean hasKey = true;
         boolean knowsUnlockSpell = false;
 
         if (hasKey || knowsUnlockSpell) {
