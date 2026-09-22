@@ -1,7 +1,7 @@
 public class HealthChecker {
     public static void main(String[] args) {
 
-        int health = 100;
+        int health = 70;
 
         if (health > 75) {
             System.out.println("Healthy");
