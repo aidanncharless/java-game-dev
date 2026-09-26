@@ -5,19 +5,25 @@ public class RPGGame {
         String characterClass = "Mage";
 
         int level = 5;
-        int xp;
+        int xp = 0;
         
-        int health = 100;
-        int maxHealth;
+        int playerHealth = 100;
+        int maxHealth = 100;
+        int healingPotion = 15;
 
         int mana = 50;
-        int manaCost;
-        int maxMana;
+        int manaCost = 12;
+        int maxMana = 50;
 
         int attack = 35;
         int defense = 50;
 
-        int gold;
+        int gold = 100;
+        int rewardXP = 65;
+        int rewardGold = 30;
+
+        int enemyDmg = 24;
+        int enemyHealth = 200;
 
         double movementSpeed = 5.5;
 
@@ -27,25 +33,38 @@ public class RPGGame {
 
         boolean hasKey = true;
         boolean isAlive = true;
+
+        int round = 1;
     
         System.out.println("GAME STARTS");
-        maxHealth = 100;
-        maxMana = 50;
-        gold = 100;
-        xp = 0;
 
         System.out.println("Player has: \n" + maxHealth + " HP\n" + maxMana + " Mana\n" + gold + " Gold\n" + xp + " XP");
 
-        int enemyDmg = 24;
-        health -= enemyDmg;
+        while (playerHealth > 0 && enemyHealth > 0) {
+            System.out.println("Round: " + round);
+            System.out.println("Kaia acts");
+    
+            enemyHealth -= attack;
 
-        System.out.println("↓");
-        System.out.println("Enemy attacks player for " + enemyDmg + " damage.");
-        System.out.println("↓");
-        System.out.println("Player attacks enemy.");
-        System.out.println("↓");
+            if (enemyHealth <= 0) {
+                System.out.println("Enemy has died.");
+            }
 
-        manaCost = 12;
+            playerHealth -= enemyDmg;
+
+             if (playerHealth <= 25) {
+            System.out.println("WARNING: Low health!");
+            }
+
+            if (playerHealth <= 0) {
+            isAlive = false;
+            System.out.println("Kaia has fallen. \n GAME OVER");
+            }
+            
+            round++;
+        }
+        
+        
 
         if (isAlive && mana >= manaCost) {
             System.out.println("Kaia casts Fireball!");
@@ -55,11 +74,6 @@ public class RPGGame {
             System.out.println("Kaia cannot cast Fireball");
         }
 
-        int enemyHealth = 60;
-
-        enemyHealth -= attack;
-        int rewardXP = 65;
-        int rewardGold = 30;
         
         if (enemyHealth <= 0) {
             System.out.println("Enemy defeated!");
@@ -68,23 +82,13 @@ public class RPGGame {
         } else {
             System.out.println("Enemy survived!");
         }
-
-        if (health <= 25) {
-            System.out.println("WARNING: Low health!");
-        }
-
-        if (health <= 0) {
-            isAlive = false;
-            System.out.println("Kaia has fallen. \n GAME OVER");
-        }
         
-        int healingPotion = 15;
 
-        if (health < maxHealth && isAlive) {
-            health += healingPotion;
+        if (playerHealth < maxHealth && isAlive) {
+            playerHealth += healingPotion;
 
-            if (health > maxHealth) {
-                health = maxHealth;
+            if (playerHealth > maxHealth) {
+                playerHealth = maxHealth;
             }
 
             System.out.println("Player drinks potion and restores " + healingPotion + " HP");
@@ -101,7 +105,7 @@ public class RPGGame {
         System.out.println("Level: " + level);
         System.out.println("XP: " + xp);
 
-        System.out.println("HP: " + health + "/" + maxHealth);
+        System.out.println("HP: " + playerHealth + "/" + maxHealth);
         System.out.println("Mana: " + mana + "/" + maxMana);
 
         System.out.println("Attack: " + attack);
