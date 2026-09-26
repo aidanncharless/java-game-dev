@@ -5,8 +5,8 @@ public class ManaRegen {
         int maxMana = 50;
 
         while (mana < maxMana) {
-            System.out.println("Current mana: " + mana);
             mana += 10;
+            System.out.println("Current mana: " + mana);
         }
     }
 }
