@@ -6,10 +6,10 @@ public class BattleRounds {
         int enemyDamage = 18; 
         int round = 1;
 
-        while (playerHealth > 100) {
-            round++;
+        while (playerHealth > 0) {
             playerHealth -= enemyDamage;
             System.out.println("Round: " + round + "\nDamage Dealt: " + enemyDamage + "\nRemaining Health: " + playerHealth);
+            round++;
         }
 
     }
