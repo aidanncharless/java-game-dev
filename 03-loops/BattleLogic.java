@@ -9,11 +9,9 @@ public class BattleLogic {
             enemyHealth -= playerDamage;
             System.out.println("Round: " + round + "\nDamage Dealt: " + playerDamage + "\nRemaining Health: " + enemyHealth);
             round++;
-
-            if (enemyHealth <= 0) {
-                System.out.println("Enemy defeated!");
-            }
         }
+
+        System.out.println("Enemy defeated!");
     }
     
 }
