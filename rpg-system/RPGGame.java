@@ -64,17 +64,6 @@ public class RPGGame {
             round++;
         }
         
-        
-
-        if (isAlive && mana >= manaCost) {
-            System.out.println("Kaia casts Fireball!");
-            mana -= manaCost;
-            System.out.println("Player uses " + manaCost + " mana.");
-        } else {
-            System.out.println("Kaia cannot cast Fireball");
-        }
-
-        
         if (enemyHealth <= 0) {
             System.out.println("Enemy defeated!");
             xp += rewardXP;
@@ -82,8 +71,8 @@ public class RPGGame {
         } else {
             System.out.println("Enemy survived!");
         }
-        
 
+        
         if (playerHealth < maxHealth && isAlive) {
             playerHealth += healingPotion;
 
@@ -92,6 +81,14 @@ public class RPGGame {
             }
 
             System.out.println("Player drinks potion and restores " + healingPotion + " HP");
+        }
+
+        if (isAlive && mana >= manaCost) {
+            System.out.println("Kaia casts Fireball!");
+            mana -= manaCost;
+            System.out.println("Player uses " + manaCost + " mana.");
+        } else {
+            System.out.println("Kaia cannot cast Fireball");
         }
 
 
