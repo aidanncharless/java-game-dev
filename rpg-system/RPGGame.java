@@ -49,7 +49,7 @@ public class RPGGame {
             if (enemyHealth > 0) {
 
                 playerHealth -= enemyDmg;
-                System.out.println("Enemy acts";)
+                System.out.println("Enemy acts");
 
                 if (playerHealth <= 25) {
                     System.out.println("WARNING: Low health!");
