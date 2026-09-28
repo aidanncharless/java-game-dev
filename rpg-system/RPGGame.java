@@ -46,19 +46,19 @@ public class RPGGame {
     
             enemyHealth -= attack;
 
-            if (enemyHealth <= 0) {
-                System.out.println("Enemy has died.");
-            }
+            if (enemyHealth > 0) {
 
-            playerHealth -= enemyDmg;
+                playerHealth -= enemyDmg;
 
-             if (playerHealth <= 25) {
-            System.out.println("WARNING: Low health!");
-            }
+                if (playerHealth <= 25) {
+                    System.out.println("WARNING: Low health!");
+                }
 
-            if (playerHealth <= 0) {
-            isAlive = false;
-            System.out.println("Kaia has fallen. \n GAME OVER");
+                if (playerHealth <= 0) {
+                    isAlive = false;
+                    System.out.println("Kaia has fallen. \n GAME OVER");
+                }
+                
             }
             
             round++;
