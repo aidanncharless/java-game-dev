@@ -57,7 +57,7 @@ public class RPGGame {
 
                 if (playerHealth <= 0) {
                     isAlive = false;
-                    System.out.println("Kaia has fallen. \n GAME OVER");
+                    System.out.println("Kaia has fallen. \nGAME OVER");
                 }
                 
             }
