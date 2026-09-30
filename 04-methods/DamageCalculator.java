@@ -5,7 +5,7 @@ public class DamageCalculator {
     
     public static int calculatePowerAttack(int attack) {
 
-        powerAttack = attack * 2;
+        int powerAttack = attack * 2;
         return powerAttack;
     }
 }
