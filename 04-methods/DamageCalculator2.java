@@ -1,4 +1,4 @@
-public class DamageCalculator {
+public class DamageCalculator2 {
     public static void main(String[] args) {
         System.out.println(calculatePowerAttack(10) + " damage was dealt!");
         System.out.println(calculatePowerAttack(25) + " damage was dealt!");
