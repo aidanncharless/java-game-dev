@@ -140,7 +140,7 @@ public class RPGGame {
                 playerHealth = maxHealth;
         }
 
-        return playerHealth
+        return playerHealth;
     }
     }
     
