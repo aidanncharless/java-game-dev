@@ -43,8 +43,9 @@ public class RPGGame {
         while (playerHealth > 0 && enemyHealth > 0) {
             System.out.println("Round: " + round);
             System.out.println("Kaia acts");
-    
-            enemyHealth -= attack;
+            
+            int damage = calculateAttackDamage(attack);
+            enemyHealth -= damage;
 
             if (enemyHealth > 0) {
 
@@ -84,10 +85,10 @@ public class RPGGame {
             System.out.println("Player drinks potion and restores " + healingPotion + " HP");
         }
 
-        if (isAlive && mana >= manaCost) {
-            System.out.println("Kaia casts Fireball!");
+        if (isAlive && canCastSpell(mana, manaCost)) {
+            System.out.println("Kaia casts Fireball! " + calculateFireballDamage(attack, criticalMultiplier) + " damage was dealt.");
             mana -= manaCost;
-            System.out.println("Player uses " + manaCost + " mana.");
+            System.out.println("Player used " + manaCost + " mana.");
         } else {
             System.out.println("Kaia cannot cast Fireball");
         }
@@ -119,6 +120,19 @@ public class RPGGame {
 
         System.out.println("========================");
 
+    }
+
+    public static int calculateAttackDamage(int attack) {
+        return attack;
+    }
+
+    public static boolean canCastSpell(int mana, int manaCost) {
+        return mana >= manaCost;
+    }
+
+    public static double calculateFireballDamage(int attack, double criticalMultiplier) {
+        double spellDamage = attack * criticalMultiplier;
+        return spellDamage;
     }
     
 }
