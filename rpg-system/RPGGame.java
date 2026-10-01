@@ -29,6 +29,7 @@ public class RPGGame {
 
         double criticalMultiplier = 1.5;
         double criticalDamage = attack * criticalMultiplier;
+        int bonusDamage = 15;
 
 
         boolean hasKey = true;
@@ -44,8 +45,18 @@ public class RPGGame {
             System.out.println("Round: " + round);
             System.out.println("Kaia acts");
             
-            int damage = calculateAttackDamage(attack);
-            enemyHealth -= damage;
+
+            if (isAlive && canCastSpell(mana, manaCost)) {
+                enemyHealth -= calculateFireballDamage(attack, bonusDamage);
+                System.out.println("Kaia casts Fireball! " + calculateFireballDamage(attack, bonusDamage) + " damage was dealt.");
+                mana -= manaCost;
+                System.out.println("Player used " + manaCost + " mana.");
+            } else {
+                System.out.println("Kaia cannot cast Fireball");
+                int damage = calculateAttackDamage(attack);
+                enemyHealth -= damage;
+                System.out.println("Kaia attacks for " + calculateAttackDamage(attack) + " damage.");
+            }
 
             if (enemyHealth > 0) {
 
@@ -65,6 +76,12 @@ public class RPGGame {
             
             round++;
         }
+        if (playerHealth < maxHealth && isAlive) {
+
+            playerHealth = useHealingPotion(playerHealth, healingPotion, maxHealth);
+            System.out.println("Kaia heals for " + healingPotion + " HP. Her current health is " + playerHealth);
+        }
+        
         
         if (enemyHealth <= 0) {
             System.out.println("Enemy defeated!");
@@ -72,25 +89,6 @@ public class RPGGame {
             gold += rewardGold;
         } else {
             System.out.println("Enemy survived!");
-        }
-
-        
-        if (playerHealth < maxHealth && isAlive) {
-            playerHealth += healingPotion;
-
-            if (playerHealth > maxHealth) {
-                playerHealth = maxHealth;
-            }
-
-            System.out.println("Player drinks potion and restores " + healingPotion + " HP");
-        }
-
-        if (isAlive && canCastSpell(mana, manaCost)) {
-            System.out.println("Kaia casts Fireball! " + calculateFireballDamage(attack, criticalMultiplier) + " damage was dealt.");
-            mana -= manaCost;
-            System.out.println("Player used " + manaCost + " mana.");
-        } else {
-            System.out.println("Kaia cannot cast Fireball");
         }
 
 
@@ -130,9 +128,20 @@ public class RPGGame {
         return mana >= manaCost;
     }
 
-    public static double calculateFireballDamage(int attack, double criticalMultiplier) {
-        double spellDamage = attack * criticalMultiplier;
+    public static int calculateFireballDamage(int attack, int bonusDamage) {
+        int spellDamage = attack + bonusDamage;
         return spellDamage;
+    }
+
+    public static int useHealingPotion(int playerHealth, int healingPotion, int maxHealth) {
+        playerHealth += healingPotion; 
+
+        if (playerHealth > maxHealth) {
+                playerHealth = maxHealth;
+        }
+
+        return playerHealth
+    }
     }
     
 }
